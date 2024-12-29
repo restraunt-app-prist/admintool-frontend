@@ -1,8 +1,8 @@
-// src/services/AuthService.ts
 import TokenService from './TokenService'
 import ApiService from './BaseAPI'
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '@/stores/auth'
+import type { LoginResponse } from '@/interfaces/auth/LoginResponse'
 
 export default class AuthService {
   private router = useRouter()
@@ -10,7 +10,7 @@ export default class AuthService {
 
   async login(username: string, password: string) {
     try {
-      const response = await ApiService.post('/login', { username, password })
+      const response = await ApiService.post<LoginResponse>('/auth/login', { username, password })
 
       const token = response.data.token
       TokenService.setToken(token)
