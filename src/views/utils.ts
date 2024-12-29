@@ -1,4 +1,4 @@
-import { MenuCategory } from "@/interfaces/menu/MenuCategory";
+import { MenuCategory } from '@/interfaces/menu/MenuCategory'
 
 export const categoryMap: { [key in MenuCategory]: { label: string; icon: string } } = {
   [MenuCategory.MEALS]: { label: 'Meals', icon: '🍽️' },
