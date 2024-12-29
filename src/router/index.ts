@@ -4,6 +4,7 @@ import { useAuthStore } from '@/stores/auth'
 import MenuListPage from '@/views/MenuList.vue'
 import EditMenuItemPage from '@/views/EditMenuItem.vue'
 import CreateMenuItemPage from '@/views/CreateMenuItem.vue'
+import UserList from '@/views/UserList.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -18,16 +19,22 @@ const routes: Array<RouteRecordRaw> = [
     meta: { requiresAuth: true }, // This route requires authentication
   },
   {
-    path: '/edit/:id',
+    path: '/menu/edit/:id',
     name: 'EditMenuItem',
     component: EditMenuItemPage,
     props: true,
     meta: { requiresAuth: true }, // This route requires authentication
   },
   {
-    path: '/create',
+    path: '/menu/create',
     name: 'CreateMenuItem',
     component: CreateMenuItemPage,
+    meta: { requiresAuth: true }, // This route requires authentication
+  },
+  {
+    path: '/users',
+    name: 'UsersList',
+    component: UserList,
     meta: { requiresAuth: true }, // This route requires authentication
   },
   {
