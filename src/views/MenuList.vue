@@ -1,6 +1,6 @@
 <template>
   <div class="menu-list">
-    <h2>Menu</h2>
+    <h1>Menu</h1>
     <button @click="onCreate">Create New Item</button>
 
     <!-- Error Message -->

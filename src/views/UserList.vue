@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="user-list">
     <h1>User Profiles</h1>
 
     <div v-if="loading" class="loading">Loading...</div>
@@ -31,6 +31,11 @@ const errorMessage = userStore.errorMessage
 </script>
 
 <style scoped>
+.user-list {
+  margin: 0 auto;
+  padding: 2rem;
+}
+
 .loading {
   font-size: 1.2rem;
   color: #007bff;

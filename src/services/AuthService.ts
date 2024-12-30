@@ -32,12 +32,4 @@ export default class AuthService {
   isAuthenticated(): boolean {
     return TokenService.isTokenValid()
   }
-
-  protectRoute(to: any, from: any, next: any) {
-    if (this.isAuthenticated()) {
-      next()
-    } else {
-      next('/login')
-    }
-  }
 }

@@ -1,14 +1,19 @@
-<!-- src/App.vue -->
 <template>
-  <div class="app-container">
+  <div id="app">
+    <NavBar />
     <router-view />
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  name: 'App',
-})
+<script setup lang="ts">
+import NavBar from './components/NavBar.vue'
 </script>
+
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+</style>

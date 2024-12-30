@@ -1,7 +1,7 @@
 import type { UserProfile } from '@/interfaces/user/User'
 import ApiService from './BaseAPI'
 
-const apiUrl = '/users'
+const apiUrl = '/user'
 
 class UserService {
   async getUsers(): Promise<UserProfile[]> {
