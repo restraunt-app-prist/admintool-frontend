@@ -38,6 +38,11 @@ const routes: Array<RouteRecordRaw> = [
     meta: { requiresAuth: true }, // This route requires authentication
   },
   {
+    path: '/user/:id',
+    name: 'UserInfo',
+    component: () => import('@/views/UserInfo.vue'),
+  },
+  {
     path: '/',
     redirect: '/menu', // Default redirect to the menu page
   },

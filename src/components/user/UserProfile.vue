@@ -4,8 +4,8 @@
       <img v-if="user.pictureUrl" :src="user.pictureUrl" alt="User Picture" class="user-image" />
       <div class="user-details">
         <h3>{{ user.firstName }} {{ user.lastName }}</h3>
-        <p>Email: {{ user.email }}</p>
-        <p>Phone: {{ user.phoneNumber }}</p>
+        <p>Email: <span>{{ user.email }}</span></p>
+        <p>Phone: <span>{{ user.phoneNumber }}</span></p>
       </div>
     </div>
   </div>
@@ -23,50 +23,65 @@ const props = defineProps<{
 const router = useRouter()
 
 const viewUser = (id: string) => {
-  // Navigate to user details page
-  router.push({ name: 'UserDetails', params: { id } })
+  router.push({ name: 'UserInfo', params: { id } })
 }
 </script>
 
 <style scoped>
 .user-profile {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 1.2rem;
   margin-bottom: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background-color: #ffffff;
+  transition: background-color 0.3s, box-shadow 0.3s;
   cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .user-profile:hover {
-  background-color: #e8f5e9;
+  background-color: #f5f5f5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .user-info {
   display: flex;
   align-items: center;
+  gap: 1.2rem;
 }
 
 .user-image {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   object-fit: cover;
   border-radius: 50%;
-  margin-right: 1rem;
+  border: 2px solid #cfd8dc;
+  background-color: #f0f0f0;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .user-details h3 {
   margin: 0;
-  font-size: 1.2rem;
-  font-weight: 500;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #424242;
 }
 
 .user-details p {
-  margin: 0.2rem 0;
-  font-size: 0.9rem;
+  margin: 0.3rem 0;
+  font-size: 1rem;
+  color: #757575;
+}
+
+.user-details p span {
+  font-weight: 500;
+  color: #616161;
 }
 </style>

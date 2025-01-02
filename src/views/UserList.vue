@@ -15,7 +15,7 @@
 
 <script setup lang="ts">
 import { onMounted } from 'vue'
-// import UserProfileComponent from '@/components/user/UserProfile.vue'
+import UserProfileComponent from '@/components/user/UserProfile.vue'
 import { useUserStore } from '../stores/user'
 import UserProfile from '../components/user/UserProfile.vue'
 
