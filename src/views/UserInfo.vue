@@ -17,11 +17,6 @@
             <p>Status: {{ order.status }}</p>
             <p>Total Price: ${{ order.totalPrice }}</p>
             <p>Stripe payment identifier: {{ order.paymentId }}</p>
-            <ul>
-              <li v-for="item in order.items" :key="item.id">
-                {{ item.name }} - {{ item.quantity }}
-              </li>
-            </ul>
           </div>
         </div>
         <div v-else>No orders available.</div>
