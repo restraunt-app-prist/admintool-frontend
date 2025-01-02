@@ -28,6 +28,7 @@ const viewUser = (id: string) => {
 </script>
 
 <style scoped>
+/* Parent container */
 .user-profile {
   display: flex;
   align-items: center;
@@ -46,12 +47,15 @@ const viewUser = (id: string) => {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Child container */
 .user-info {
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: 1.2rem;
+  flex: 1; /* Ensures the content takes available space */
 }
 
+/* User image */
 .user-image {
   width: 60px;
   height: 60px;
@@ -61,12 +65,14 @@ const viewUser = (id: string) => {
   background-color: #f0f0f0;
 }
 
+/* User details */
 .user-details {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  text-align: left;
 }
 
+/* Name */
 .user-details h3 {
   margin: 0;
   font-size: 1.4rem;
@@ -74,6 +80,7 @@ const viewUser = (id: string) => {
   color: #424242;
 }
 
+/* Info text */
 .user-details p {
   margin: 0.3rem 0;
   font-size: 1rem;

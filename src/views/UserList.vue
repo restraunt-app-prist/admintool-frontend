@@ -18,6 +18,7 @@ import { onMounted } from 'vue'
 import UserProfileComponent from '@/components/user/UserProfile.vue'
 import { useUserStore } from '../stores/user'
 import UserProfile from '../components/user/UserProfile.vue'
+import { storeToRefs } from 'pinia'
 
 const userStore = useUserStore()
 
@@ -25,9 +26,7 @@ onMounted(() => {
   userStore.fetchUsers()
 })
 
-const users = userStore.users
-const loading = userStore.loading
-const errorMessage = userStore.errorMessage
+const { users, loading, errorMessage } = storeToRefs(userStore)
 </script>
 
 <style scoped>
